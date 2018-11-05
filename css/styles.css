@@ -6,7 +6,7 @@ hr {
   /*animation-name: dragon;
   animation-duration: 3s;
   animation-iteration-count: infinite;*/
-  background-image: url("../img/dragon.png");
+  background-image: url("../img/dragon-flying.png");
   background-size: contain;
   background-repeat: no-repeat;
   animation: dragon 1s 2 ease-in-out forwards;
