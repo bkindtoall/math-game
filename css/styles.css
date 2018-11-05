@@ -1,13 +1,9 @@
 /*-------animation------*/
 .dragon {
-  /*animation-name: dragon;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;*/
   background-image: url("../img/dragon-flying.png");
   background-size: contain;
   background-repeat: no-repeat;
-  border: 5px black solid;
-  animation: dragon 1s 1 ease-in-out forwards;
+  animation: dragon 4s 1 ease-in-out forwards;
   width:  10vw;
   height:  10vw;
   text-align: center;
@@ -16,26 +12,44 @@
   0% {
   transform: translate(0,50px);
   }
-  25% {
-    transform: translate(100%,0);
-
+  10% {
+    transform: translate(7vw,0px);
+  }
+  20% {
+    transform: translate(14vw,0px);
+  }
+  30% {
+    transform: translate(21vw,0px);
+  }
+  40% {
+    transform: translate(28vw,0px);
   }
   50% {
-  transform: translate(200%,50px);
-
+    transform: translate(35vw,0px);
   }
-  75% {
-    transform: translate(300%,0);
-
+  60% {
+    transform: translate(42vw,0px);
+  }
+  70% {
+    transform: translate(49vw,0px);
+  }
+  80% {
+    transform: translate(56vw,0px);
+  }
+  90% {
+    transform: translate(63vw,0px);
   }
   100% {
-  transform: translate(400%,50px);
-
+    transform: translate(70vw,0px);
   }
 }
 .container-for-dragon {
-  width: 500px;
-  height: 400px;
-  background-color: gray;
+  width: 80vw;
+  height: 20vw;
+  background-image: url("../img/test-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   margin: auto;
+
 }
