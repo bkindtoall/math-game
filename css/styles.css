@@ -1,0 +1,38 @@
+/*-------animation------*/
+hr {
+  width: 500px;
+}
+.square {
+  animation-name: square;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+
+  width:  100px;
+  height:  100px;
+  text-align: center;
+}
+@keyframes square {
+  0% {
+  transform: translate(0,0);
+    background-color: green;
+    transition: all 2s;
+  }
+  50% {
+    transform: translate(150px,0);
+    background-color: blue;
+    transition: all 2s;
+
+  }
+  100% {
+  transform: translate(400px,0);
+    background-color: yellow;
+    transition: all 2s;
+
+  }
+}
+.container-for-square {
+  width: 500px;
+  height: auto;
+  background-color: gray;
+  margin: auto;
+}
