@@ -6,22 +6,32 @@ hr {
   /*animation-name: square;
   animation-duration: 3s;
   animation-iteration-count: infinite;*/
-  background-color: green;
-  animation: square 3s infinite linear forwards;
+  background-image: url("../img/dragon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: square 1s 2 ease-in-out forwards;
   width:  100px;
   height:  100px;
   text-align: center;
 }
 @keyframes square {
   0% {
-  transform: translate(0,0);
+  transform: translate(0,50px);
+  }
+  25% {
+    transform: translate(50px,0);
+
   }
   50% {
-    transform: translate(200px,0);
+  transform: translate(100px,50px);
+
+  }
+  75% {
+    transform: translate(150px,0);
 
   }
   100% {
-  transform: translate(400px,0);
+  transform: translate(200px,50px);
 
   }
 }
