@@ -1,3 +1,23 @@
+function Player (playerName) {
+  this.playerName = playerName;
+}
+function Game (gameType, gameMode) {
+  this.gameType = gameType;
+  this.gameMode = gameMode;
+  this.answers = 0;
+  this.wrongAnswers = 0;
+  this.correctAnswers= 0;
+
+}
+Game.prototype.getCorrectAnswer = function (){
+  this.answers++;
+  this.correctAnswers++;
+}
+Game.prototype.getWrongAnswer = function (){
+  this.answers++;
+  this.correctAnswers++;
+}
+
 // function Players (bluePlayer, redPlayer, bluePlayerName, redPlayerName) {
 //   this.bluePlayer = bluePlayer,
 //   this.redPlayer = redPlayer,
