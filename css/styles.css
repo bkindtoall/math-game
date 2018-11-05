@@ -2,24 +2,24 @@
 hr {
   width: 500px;
 }
-.square {
-  /*animation-name: square;
+.dragon {
+  /*animation-name: dragon;
   animation-duration: 3s;
   animation-iteration-count: infinite;*/
   background-image: url("../img/dragon.png");
   background-size: contain;
   background-repeat: no-repeat;
-  animation: square 1s 2 ease-in-out forwards;
-  width:  100px;
-  height:  100px;
+  animation: dragon 1s 2 ease-in-out forwards;
+  width:  10vw;
+  height:  10vw;
   text-align: center;
 }
-@keyframes square {
+@keyframes dragon {
   0% {
   transform: translate(0,50px);
   }
   25% {
-    transform: translate(50px,0);
+    transform: translate(100%,0);
 
   }
   50% {
@@ -35,7 +35,7 @@ hr {
 
   }
 }
-.container-for-square {
+.container-for-dragon {
   width: 500px;
   height: auto;
   background-color: gray;
