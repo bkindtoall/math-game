@@ -1,13 +1,79 @@
 /*-------animation------*/
-.dragon {
+.flying-section {
+  position: relative;
+}
+.flying-section img {
+  width: 20vw;
+  position: absolute;
+}
+.wings-up {
+  animation-name: fade;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-duration: 0.5s;
+	animation-direction: alternate;
+}
+
+@keyframes fade {
+	0% {
+    opacity: 1;
+    transform: translate(0,5vw);
+	}
+	25% {
+    opacity: 1;
+    transform: translate(0,5vw);
+
+	}
+	75% {
+    opacity: 0;
+    transform: translate(0,0);
+
+	}
+	100% {
+    opacity: 0;
+    transform: translate(0,0);
+
+	}
+}
+.wings-down {
+  animation-name: otherFade;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-duration: 0.5s;
+	animation-direction: alternate;
+}
+
+@keyframes otherFade {
+	0% {
+    opacity: 0;
+    transform: translate(0,5vw);
+	}
+	25% {
+    opacity: 0;
+    transform: translate(0,5vw);
+
+	}
+	75% {
+    opacity: 1;
+    transform: translate(0,0);
+
+	}
+	100% {
+    opacity: 1;
+    transform: translate(0,0);
+
+	}
+}
+/* .dragon {
   background-image: url("../img/dragon-flying.png");
   background-size: contain;
   background-repeat: no-repeat;
-  animation: dragon 4s 1 ease-in-out forwards;
+  animation: dragon 2s 2 ease-in-out forwards;
   width:  10vw;
   height:  10vw;
   text-align: center;
 }
+
 @keyframes dragon {
   0% {
   transform: translate(0,50px);
@@ -44,6 +110,10 @@
   }
 }
 .container-for-dragon {
+  
+
+} */
+.background-forest {
   width: 80vw;
   height: 20vw;
   background-image: url("../img/test-background.jpg");
@@ -51,5 +121,4 @@
   background-repeat: no-repeat;
   background-position: center;
   margin: auto;
-
 }
