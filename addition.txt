@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 addition easy
 2+3= 5 7 4
 5+1= 6 8 7
@@ -128,7 +127,6 @@ subtraction advanced
 95-25= 70 65 79
 90-39= 51 60 68
 99-1= 98 100 87
-=======
 Addition
 Easy
 2+3=
@@ -884,4 +882,3 @@ Hard
 98
 100
 87
->>>>>>> 74802d1e6d5be57940abc412e83e25acd51ef8d5

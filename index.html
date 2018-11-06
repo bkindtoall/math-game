@@ -5,6 +5,7 @@
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="js/jquery-3.3.1.js"></script>
   <script src="js/scripts.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Spicy+Rice" rel="stylesheet">
   <title>Kid's math game</title>
 </head>
 <body>
@@ -31,6 +32,32 @@
             <div class="form-group">
               <label for="player">Enter name: </label>
               <input type="text"  class="form-control" id="player" required>
+    <div class="homePage">
+      <div class="center-outer">
+        <div class="center-inner">
+          <div class="bubbles">
+            <h1> Welcome to math game! </h1>
+          </div>
+        </div>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col-md-6">
+          <br>
+          <div class="container">
+            <img id="thought2" src="img/thought2.png" alt="though bubble">
+            <div class="centered">
+              <p>Hello, I'm Toothless. Lets play a math game. Click 'Start' to wake me up</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <form id="formOne">
+            <div class="form-group">
+              <div class="form-group">
+                <label for="player">Enter name: </label>
+                <input type="text"  class="form-control" id="player" required>
+              </div>
             </div>
             <label for="gameType">Game Type</label>
             <select class="form-control" id="gameType">
@@ -43,56 +70,47 @@
               <option value='easy'>Easy</option>
               <option value='moderate'>Moderate</option>
               <option value='advanced'>Advanced</option>
-            </select>
+            </select><br>
+            <button type="submit" class="btn btn-primary">Start</button>
           </div>
-
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </div>
+      </form>
+      <div class="col-md-12">
+        <div>
+          <img id="dragon-sleep" src="img/dragon-sleep.png" alt="dragon-sleep">
+        </div>
       </div>
-
+    </div>
+    <div class="playPage">
       <div class="col-md-12 background">
         <div class="playerNameLabel">
-          <label  for="playerNameLabel"><span id='playerName'></span></label>
+          <label  for="playerNameLabel"><span id='playerName'></span>Name:</label>
           <br>
-          <label  for="correctAnswers"> Correct Answers: <span id='correctAnswers'></span></label>
+          <label  for="correctAnswers"> Correct Answers: <span id='correctAnswers'></span></label><br>
           <label  for="wrongAnswers"> Wrong Answers: <span id='wrongAnswers'></span></label>
         </div>
-        <div class="equations">
-          <img src="./img/dice1.png" alt="dice">
-        </div>
-        <div class="game-buttons">
-          <button class="btn btn-primary" type="submit" id="answerOne">Choice 1</button>
-          <button class="btn btn-primary" type="submit" id="answerTwo">Choice 2</button>
-          <button class="btn btn-primary" type="submit" id="answerThree">Choice 3</button>
-        </div>
-        <label  class="turnPoint" for="turnPoint"><span id='turnPoint'></span></label>
       </div>
-
-    </div>
-    <div class="questions">
-      <p class="1">2+4=</p>
-      <ul class="1">
-        <li>6</li>
-        <li>5</li>
-        <li>7</li>
-      </ul>
-      <p class="2">1+4=</p>
-      <ul class="2">
-        <li>5</li>
-        <li>3</li>
-        <li>7</li>
-      </ul>
-      <p class="3">6+3=</p>
-      <ul class="3">
-        <li>9</li>
-        <li>4</li>
-        <li>7</li>
-      </ul>
+      <div id="textArea">
+        <textarea rows="2" cols="50">Text Area </textarea>
+      </div>
+      <div class="game-buttons">
+        <div class="row">
+          <div class="col-md-3">
+            <button class="btn btn-primary" type="submit" id="answerOne">Choice1</button>
+          </div>
+          <div class="col-md-3">
+            <button class="btn btn-primary" type="submit" id="answerTwo">Choice2</button>
+          </div>
+          <div class="col-md-3">
+            <button class="btn btn-primary" type="submit" id="answerThree">Choice3</button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img id="dragon-awake" src="img/dragon-awake-rv.png" alt="dragon-awake">
+      </div>
     </div>
   </div>
-  <br>
-  <br>
-  <br>
 </body>
   <head>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
