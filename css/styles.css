@@ -1,20 +1,8 @@
-/*-------animation------*/
-.flying-section {
-  position: relative;
-  animation: move-forward 2s 1 ease-in-out forwards;
-}
-.flying-section img {
-  width: 20vw;
-  position: absolute;
-}
+/*--------------animation-------------*/
+/* ---flapping wings--- */
 .wings-up {
-  animation-name: fade;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
-	animation-duration: 0.3s;
-	animation-direction: alternate;
+  animation: fade 0.3s infinite ease-in-out alternate;
 }
-
 @keyframes fade {
 	0% {
     opacity: 1;
@@ -23,27 +11,19 @@
 	25% {
     opacity: 1;
     transform: translate(0,3vw);
-
 	}
 	75% {
     opacity: 0;
     transform: translate(0,0);
-
 	}
 	100% {
     opacity: 0;
     transform: translate(0,0);
-
 	}
 }
 .wings-down {
-  animation-name: otherFade;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
-	animation-duration: 0.3s;
-	animation-direction: alternate;
+  animation: otherFade 0.3s infinite ease-in-out alternate;
 }
-
 @keyframes otherFade {
 	0% {
     opacity: 0;
@@ -52,20 +32,27 @@
 	25% {
     opacity: 0;
     transform: translate(0,3vw);
-
 	}
 	75% {
     opacity: 1;
     transform: translate(0,0);
-
 	}
 	100% {
     opacity: 1;
     transform: translate(0,0);
-
 	}
 }
-@keyframes move-forward {
+/* ---forward motion--- */
+.flying {
+  position: relative;
+  animation: move-forward 5s 1 ease-in-out forwards;
+}
+.flying img {
+  width: 20vw;
+  position: absolute;
+}
+@keyframes Xmove-forward {
+  /* Each percentage below represents a quiz question (10% is the location dragon should be at after question 1, 20% is where he should be after question 2, etc.) */
   0% {
   transform: translate(0,50px);
   }
@@ -98,27 +85,47 @@
   }
   100% {
     transform: translate(70vw,0px);
+    /* ------final x axis number needs to match the obstacle animation (100%) x-axis, or be a few pixels ahead. So the dragon stops behind the rock.----- */
   }
 }
+/* ---reaction to obstacle---
+flapping wings images (.wings-down and wings-up) need to disappear when the surprised dragon appears */
+/* .dragon-surprised {
+  opacity: 0;
+  animation: surprised-reaction 0.2s 1 forwards 4.8s;
+}
+@keyframes surprised-reaction {
+  100% {
+    opacity: 1;
+  }
+} */
+/* ---fighting obstacle--- */
+
+/* ---obstacles--- */
 .falling-rock {
-  width: 10vw;
-  height: 10vw;
-  margin-left: auto;
-  margin-right: auto;
+  display: inline-block;
+  position: absolute;
+  opacity: 0;
+  width: 15vw;
+  height: 15vw;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("../img/rock.jpg");
-  animation: obstacle 1s 3 ease-in forwards;
+  background-image: url("../img/rock1.png");
+  animation: obstacle 0.2s 1 ease-in forwards 1.3s;
 }
 @keyframes obstacle {
   0% {
-    transform: translate(0, 0) rotateZ(180deg);
+    opacity: 1;
+    transform: translate(70vw, 0) rotateZ(180deg);
   }
   100% {
-    transform: translate(0, 70vw) rotateZ(0deg);
+    opacity: 1;
+    transform: translate(70vw, 15vw) rotateZ(0deg);
+    /* ------final x axis number needs to match the move-forward (100%) x-axis, or be a few pixels ahead. So the dragon stops behind the rock.----- */
   }
 }
+/* ---background--- */
 .background-forest {
   width: 80vw;
   height: 20vw;

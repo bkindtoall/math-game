@@ -10,14 +10,40 @@
   <body>
     <h1>hi</h1>
     <p>efks</p>
-    <div class="falling-rock"></div>
-    <div class="flying-section">
+    <div class="dragon">
+
+    </div>
+    <div class="flying dragon">
       <img class = "wings-down" src="img/dragon-wings-down.png" alt="dragon-wings-down">
       <img class = "wings-up" src="img/dragon-wings-up.png" alt="dragon-wings-up">
+      <!-- <img class = "dragon-surprised" src="img/dragon-standing.png" alt="dragon-wings-up"> -->
     </div>
+    <div class="firebreathing">
+    </div>
+    <div class="surprised">
+    </div>
+
     <div class="background-forest">
-      
+      <span class="falling-rock"></span>
     </div>
     
   </body>
+  <!-- <script>
+     var flightDistance = 0;
+
+    setInterval(function(){
+      $(".dragon").css("left", flightDistance);
+      // console.log($(".wings-down").position());
+      if(flightDistance != 300) {
+        flightDistance+=2;
+      } else {
+        $(".flying").removeClass("dragon");
+        return
+      }
+      console.log($(".dragon").css("left"));
+    },15);
+
+      
+
+  </script> -->
 </html>
