@@ -10,6 +10,15 @@ body {
   margin: 4px;
   margin-right: 10px;
  }
+ html {
+   background-image: url(../img/background.jpg);
+   height: 100%;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: right 45% bottom 45%;
+   margin: 4px;
+   margin-right: 10px;
+  }
 
  .center-outer {
 display: table;
@@ -32,9 +41,10 @@ position: relative;
 .bubbles h1 {
 position: relative;
 margin: 1em 0 0;
-font-family: 'Luckiest Guy', cursive;
-color: forestgreen;
+font-family: 'Spicy Rice', cursive;
+color: blue;
 z-index: 1%;
+
 }
 
 .individual-bubble {
@@ -47,6 +57,7 @@ z-index: 1;
 
 h1 {
   font-size: 65px;
+
 }
 
 #thought2 {
@@ -54,14 +65,20 @@ h1 {
   opacity: 0.8;
   float: right;
     position:absolute;
-        top: 0.5%;
+        top: 0.2%;
         left: 10%;
 }
 .centered {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 45%;
     transform: translate(-50%, -50%);
+    font-family: 'Indie Flower', cursive;
+    color: blue;
+}
+p {
+  font-size: 200%
+
 }
 .card {
   margin-bottom: 20px;
@@ -69,6 +86,9 @@ h1 {
 
 #dragon-sleep {
   width: 25%;
+  position: absolute;
+  top: 10%;
+  right: 75%;
 }
 
 .background .bluePlayerLabel {
