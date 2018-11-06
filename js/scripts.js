@@ -20,8 +20,6 @@ jQuery(document).ready(function($){
             $(this).remove()
         }
         );
-
-
     }, 350);
 
 });
