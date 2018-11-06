@@ -43,11 +43,11 @@
 	}
 }
 /* ---forward motion--- */
-.flying-section {
+.dragon {
   position: relative;
   animation: move-forward 5s 1 ease-in-out forwards;
 }
-.flying-section img {
+.dragon img {
   width: 20vw;
   position: absolute;
 }
@@ -88,10 +88,19 @@
     /* ------final x axis number needs to match the obstacle animation (100%) x-axis, or be a few pixels ahead. So the dragon stops behind the rock.----- */
   }
 }
+/* ---reaction to obstacle---
+flapping wings images (.wings-down and wings-up) need to disappear when the surprised dragon appears */
 .dragon-surprised {
-  animation: surprised-reaction 0.2s 1 forwards 1.5s;
+  opacity: 0;
+  animation: surprised-reaction 0.2s 1 forwards 4.8s;
 }
-@keyframes surprised-reaction {}
+@keyframes surprised-reaction {
+  100% {
+    opacity: 1;
+  }
+}
+/* ---fighting obstacle--- */
+
 /* ---obstacles--- */
 .falling-rock {
   display: inline-block;
