@@ -80,7 +80,7 @@ Dragon.prototype.move= function () {
   this.xCordinate +=50;
 }
 Dragon.prototype.breath= function () {
-  
+
 }
 $(document).ready(function() {
   $("form#formOne").submit(function(event) {
