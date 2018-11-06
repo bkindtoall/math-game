@@ -1,16 +1,18 @@
+.homePage {
+  /*display: none;*/
+}
+.gamePage {
+  display: none;
+}
 .game-buttons {
   /*margin-bottom: 10%;*/
   /*margin-top: 0.5%;*/
   margin-left: 25%;
-
 }
 #textArea {
   margin-bottom: 5%;
   margin-top: 15%;
   margin-left: 30%;
-}
-.homePage {
-  display: none;
 }
 
 body {
@@ -100,6 +102,7 @@ p {
   position: absolute;
   top: 10%;
   right: 75%;
+  margin-top: 15%;
 }
 #dragon-awake {
   width: 25%;
