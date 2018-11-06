@@ -7,7 +7,7 @@ function Game (gameType, gameMode) {
   this.answers = 0;
   this.wrongAnswers = 0;
   this.correctAnswers= 0;
-
+  this.progress = "continue";
 }
 Game.prototype.getCorrectAnswer = function (){
   this.answers++;
@@ -17,7 +17,43 @@ Game.prototype.getWrongAnswer = function (){
   this.answers++;
   this.correctAnswers++;
 }
+Game.prototype.checkEndOfGame = function (){
+  if (this.correctAnswers===10){
+    this.progress = "win";
+  }
+  if (this.wrongAnswers===3){
+    this.progress = "loose";
+  }
+}
+function Datas () {
+  this.questions = [];
+  this.currectAnswers = [];
+  this.wrongAnswers1 = [];
+  this.wrongAnswers2 = [];
 
+
+}
+Data.prototype.getData(){
+	$.ajax({
+		url: "addition.txt",
+		type: "GET",
+		dataType: "text",
+		success: successFn,
+		error: errorFn,
+		complete: function(xhr, status){}
+	})
+  function successFn(result){
+    var lineByLine = result.split("\n");
+    for (i=0;i<lineByLine.length;i++) {
+      if (lineByLine[i]=this.gameType) {
+        
+      }
+    }
+  }
+  function errorFn(xhr, status, strErr){
+    console.log("error");
+  }
+}
 // function Players (bluePlayer, redPlayer, bluePlayerName, redPlayerName) {
 //   this.bluePlayer = bluePlayer,
 //   this.redPlayer = redPlayer,
