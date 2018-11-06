@@ -35,7 +35,6 @@ function Datas (gameType,gameMode) {
 }
 Datas.prototype.getData= function(){
   var thisObject = this;
-  console.log(thisObject);
 	$.ajax({
 		url: "addition.txt",
 		type: "GET",
@@ -72,7 +71,17 @@ Datas.prototype.getData= function(){
     console.log("error");
   }
 }
+function Dragon(){
+  this.shape=""
+  this.xCordinate=0
 
+}
+Dragon.prototype.move= function () {
+  this.xCordinate +=50;
+}
+Dragon.prototype.breath= function () {
+  
+}
 $(document).ready(function() {
   $("form#formOne").submit(function(event) {
     event.preventDefault();
