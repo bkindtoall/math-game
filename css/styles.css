@@ -27,6 +27,13 @@ body {
   margin-bottom: 20px;
 }
 
+#gameMelody {
+  float: bottom;
+  position: absolute;
+  bottom: 1px;
+  right: 3px;
+}
+
 #dragon-sleep {
   width: 30%;
 }
