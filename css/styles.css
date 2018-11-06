@@ -1,0 +1,67 @@
+jumbotron {
+  text-align: center;
+}
+.card {
+  margin-bottom: 20px;
+}
+
+.background {
+  background-image: url("../img/bg.jpg");
+  height: 700px;
+  position: relative;
+}
+.background .bluePlayerLabel {
+  font-size: 2vw;
+  font-weight: bold;
+  color: blue;
+  float: left;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.background .playerNameLabel {
+  font-size: 2vw;
+  font-weight: bold;
+  color: red;
+  float: right;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+button {
+  margin-bottom: 10px;
+}
+
+#rollDiceButton {
+float: left;
+  position:absolute;
+      top: 75%;
+      left: 35%;
+}
+
+#holdButton {
+  float: left;
+  position: absolute;
+    top: 75%;
+    left: 55%;
+}
+.equations img {
+  position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto auto;
+      width: 10%;
+}
+
+.turnPoint {
+  float: left;
+  font-size: 2vw;
+  font-weight: bold;
+  position: absolute;
+  top: 65%;
+  left: 44%;
+}
+.game-buttons {
+  /*display: none;*/
+}

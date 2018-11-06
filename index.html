@@ -1,14 +1,97 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="js/jquery-3.3.1.js"></script>
   <script src="js/scripts.js"></script>
-  <title>Math Game</title>
+  <title>Kid's math game</title>
 </head>
 <body>
-  <h1>hi</h1>
-  <p>efks</p>
+  <div class="container">
+    <div class="jumbotron">
+      <h1> Welcome to math game! </h1>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h2> Rules: </h2>
+          </div>
+          <div class="card-body">
+            <p>The game starts with a player rolling the dice. If the player rolls and receives a 2-6, they add that to their point total. That player will continue to go until they choose to "hold", or they roll a 1. If the player chooses to "hold", then they keep the points they have accumulated for that turn, and add it to their point total. If that player rolls a 1 then they lose all points for that turn and lose their turn. The first player to 100 wins!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <form id="formOne">
+          <div class="form-group">
+            <div class="form-group">
+              <label for="player">Enter name: </label>
+              <input type="text"  class="form-control" id="player" required>
+            </div>
+            <label for="gameType">Game Type</label>
+            <select class="form-control" id="gameType">
+              <option value='addition'>Addition</option>
+              <option value='subtraction'>Subtraction</option>
+            </select>
+            <br>
+            <label for="gameMode">Choose a difficulty</label>
+            <select class="form-control" id="gameMode">
+              <option value='easy'>Easy</option>
+              <option value='moderate'>Moderate</option>
+              <option value='advanced'>Advanced</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+
+      <div class="col-md-12 background">
+        <div class="playerNameLabel">
+          <label  for="playerNameLabel"><span id='playerName'></span></label>
+          <br>
+          <label  for="correctAnswers"> Correct Answers: <span id='correctAnswers'></span></label>
+          <label  for="wrongAnswers"> Wrong Answers: <span id='wrongAnswers'></span></label>
+        </div>
+        <div class="equations">
+          <img src="./img/dice1.png" alt="dice">
+        </div>
+        <div class="game-buttons">
+          <button class="btn btn-primary" type="submit" id="answerOne">Choice 1</button>
+          <button class="btn btn-primary" type="submit" id="answerTwo">Choice 2</button>
+          <button class="btn btn-primary" type="submit" id="answerThree">Choice 3</button>
+        </div>
+        <label  class="turnPoint" for="turnPoint"><span id='turnPoint'></span></label>
+      </div>
+
+    </div>
+    <div class="questions">
+      <p class="1">2+4=</p>
+      <ul class="1">
+        <li>6</li>
+        <li>5</li>
+        <li>7</li>
+      </ul>
+      <p class="2">1+4=</p>
+      <ul class="2">
+        <li>5</li>
+        <li>3</li>
+        <li>7</li>
+      </ul>
+      <p class="3">6+3=</p>
+      <ul class="3">
+        <li>9</li>
+        <li>4</li>
+        <li>7</li>
+      </ul>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
 </body>
 </html>
