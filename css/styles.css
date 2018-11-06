@@ -1,7 +1,7 @@
 /*--------------animation-------------*/
 /* ---flapping wings--- */
 .wings-up {
-  animation: fade 1s infinite ease-in-out alternate;
+  animation: fade 0.3s infinite ease-in-out alternate;
 }
 @keyframes fade {
 	0% {
@@ -22,7 +22,7 @@
 	}
 }
 .wings-down {
-  animation: otherFade 1s infinite ease-in-out alternate;
+  animation: otherFade 0.3s infinite ease-in-out alternate;
 }
 @keyframes otherFade {
 	0% {
@@ -45,7 +45,7 @@
 /* ---forward motion--- */
 .flying-section {
   position: relative;
-  animation: move-forward 2s 1 ease-in-out forwards;
+  animation: move-forward 5s 1 ease-in-out forwards;
 }
 .flying-section img {
   width: 20vw;
@@ -88,13 +88,17 @@
     /* ------final x axis number needs to match the obstacle animation (100%) x-axis, or be a few pixels ahead. So the dragon stops behind the rock.----- */
   }
 }
+.dragon-surprised {
+  animation: surprised-reaction 0.2s 1 forwards 1.5s;
+}
+@keyframes surprised-reaction {}
 /* ---obstacles--- */
 .falling-rock {
   display: inline-block;
   position: absolute;
   opacity: 0;
-  width: 11vw;
-  height: 11vw;
+  width: 15vw;
+  height: 15vw;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
