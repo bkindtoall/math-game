@@ -28,7 +28,7 @@
     </div>
     
   </body>
-  <!-- <script>
+  <script>
      var flightDistance = 0;
 
     setInterval(function(){
@@ -36,13 +36,14 @@
       // console.log($(".wings-down").position());
       if(flightDistance != 300) {
         flightDistance+=2;
+      } else {
+        $(".flying").removeClass("dragon");
+        return
       }
       console.log($(".dragon").css("left"));
     },15);
 
-    while($(".dragon").css("left") == "300px") {
-      console.log("At the end");
-      $(".dragon").removeClass("flying");
+      
     }
-  </script> -->
+  </script>
 </html>
