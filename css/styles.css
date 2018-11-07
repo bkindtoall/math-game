@@ -225,7 +225,38 @@ flapping wings images (.wings-down and wings-up) need to disappear when the surp
     opacity: 1;
   }
 }
-/* ---fighting obstacle--- */
+/* ---firebreathing and fighting obstacle--- */
+.little-fire {
+  animation: breathe-fire 0.4s infinite linear alternate;
+}
+@keyframes breathe-fire {
+  0% {
+    opacity: 0;
+    transform: translate(150px,-20px);
+  }
+  50% {
+    opacity:1;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(150px,-20px);
+  }
+}
+.bigger-fire {
+  animation: more-fire 0.4s infinite linear alternate;
+}
+@keyframes more-fire {
+  0% {
+    opacity: 1;
+    transform: translate(150px,-20px);
+  }
+  50% {
+    opacity:1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(150px,-20px);
+  }
 
 /* ---obstacles--- */
 .falling-rock {
