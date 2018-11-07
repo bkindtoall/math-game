@@ -10,25 +10,10 @@
   <title>Kid's math game</title>
 </head>
 <body>
-  <head>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery-3.3.1.js"></script>
-    <script src="js/scripts.js"></script>
-    <title>Kid's math game</title>
-  </head>
       <iframe src="audio/silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
       <audio id="gameMelody" loop autoplay controls="">
         <source type="audio/mpeg" src="audio/game-melody.mp3">
       </audio>
-  <body>
-    <div class="container">
-      <div class="jumbotron">
-        <h1> Welcome to math game! </h1>
-      </div><br>
-</p>
-<br><br>
-=======
   <div class="container">
     <div class="homePage">
       <div class="center-outer">
@@ -110,19 +95,17 @@
     </div>
   </div>
   <!-- --------Leilani animation section-------- -->
-    <div class="dragon">
-
-    </div>
-    <div class="flying">
+    
+    <div class="dragon" id = "flying">
       <img class = "wings-down" src="img/dragon-wings-down.png" alt="dragon-wings-down">
       <img class = "wings-up" src="img/dragon-wings-up.png" alt="dragon-wings-up">
+    </div>
+    <div class="dragon surprised" id="surprised">
       <img class = "dragon-surprised" src="img/dragon-standing.png" alt="dragon-wings-up">
     </div>
-    <div class="firebreathing">
+    <div class="dragon firebreathing" id="firebreathing">
     </div>
-    <div class="surprised">
-    </div>
-
+    
     <div class="background-forest">
       <span class="falling-rock"></span>
     </div>

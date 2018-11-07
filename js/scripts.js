@@ -125,3 +125,12 @@ jQuery(document).ready(function($){
 
 });
 // >>>>>>> 5fda4e1882904d2e21766c605766e89aa1715f9f
+// ---tentative animation triggers---
+$(document).ready(function(){
+  $("form#formOne").submit(function(event){
+    event.preventDefault();
+    $(".dragon#flying").show();
+
+  })
+  
+})

@@ -121,10 +121,21 @@ p {
 button {
   margin-bottom: 10px;
 }
-/*--------------animation-------------*/
+/*---------------------animation-------------------*/
+.dragon {
+  position: relative;
+  display: none;
+  /* ---forward motion pt 1 of 2--- */
+  animation: move-forward 5s 1 ease-in-out forwards;
+}
+.dragon img {
+  width: 20vw;
+  position: absolute;
+}
 /* ---flapping wings--- */
 .wings-up {
   animation: fade 0.3s infinite ease-in-out alternate;
+  /* control wing flap speed here and under wings-down */
 }
 @keyframes fade {
 	0% {
@@ -165,15 +176,7 @@ button {
     transform: translate(0,0);
 	}
 }
-/* ---forward motion--- */
-.flying {
-  position: relative;
-  animation: move-forward 5s 1 ease-in-out forwards;
-}
-.flying img {
-  width: 20vw;
-  position: absolute;
-}
+/* ---forward motion pt 2 of 2--- */
 @keyframes move-forward {
   /* Each percentage below represents a quiz question (10% is the location dragon should be at after question 1, 20% is where he should be after question 2, etc.) */
   0% {
