@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+// Business Logic
 function Player (playerName) {
   this.playerName = playerName;
 }
@@ -98,7 +98,7 @@ setTimeout(function(){
 
   })
 })
-=======
+// Bubbles
 jQuery(document).ready(function($){
      var bArray = [];
     var sArray = [4,6,8,10];
@@ -124,4 +124,4 @@ jQuery(document).ready(function($){
     }, 350);
 
 });
->>>>>>> 5fda4e1882904d2e21766c605766e89aa1715f9f
+// >>>>>>> 5fda4e1882904d2e21766c605766e89aa1715f9f

@@ -1,84 +1,17 @@
 .homePage {
-  /*display: none;*/
-}
-.gamePage {
   display: none;
 }
-jumbotron {
-  text-align: center;
-}
-.card {
-  margin-bottom: 20px;
-}
-
-.background {
-  background-image: url("../img/bg.jpg");
-  height: 700px;
-  position: relative;
-}
-.background .bluePlayerLabel {
-  font-size: 2vw;
-  font-weight: bold;
-  color: blue;
-  float: left;
-  margin-top: 20px;
-  margin-left: 20px;
-}
-
-.background .playerNameLabel {
-  font-size: 2vw;
-  font-weight: bold;
-  color: red;
-  float: right;
-  margin-top: 20px;
-  margin-right: 20px;
-}
-button {
-  margin-bottom: 10px;
-}
-
-#rollDiceButton {
-float: left;
-  position:absolute;
-      top: 75%;
-      left: 35%;
-}
-
-#holdButton {
-  float: left;
-  position: absolute;
-    top: 75%;
-    left: 55%;
-}
-.equations img {
-  position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto auto;
-      width: 10%;
-}
-
-.turnPoint {
-  float: left;
-  font-size: 2vw;
-  font-weight: bold;
-  position: absolute;
-  top: 65%;
-  left: 44%;
+.gamePage {
+  /* display: none; */
 }
 .game-buttons {
-  /*display: none;*/
-.game-buttons {
-  /*margin-bottom: 10%;*/
-  /*margin-top: 0.5%;*/
-  margin-left: 25%;
+  /* display: none;
+ */
 }
 #textArea {
   margin-bottom: 5%;
   margin-top: 15%;
-  margin-left: 30%;
+  margin-left: 20%;
 }
 
 body {
@@ -147,7 +80,7 @@ h1 {
   top: 0.2%;
   left: 10%;
 }
-.centered {
+.centeredText {
   position: absolute;
   top: 50%;
   left: 45%;
@@ -156,14 +89,15 @@ h1 {
   color: blue;
 }
 p {
-  font-size: 200%
+  font-size: 150%;
+  padding: 15%;
 
 }
 .card {
   margin-bottom: 20px;
 }
 
-#dragon-sleep {
+ #dragon-sleep {
   width: 25%;
   position: absolute;
   top: 10%;
@@ -186,6 +120,7 @@ p {
 }
 button {
   margin-bottom: 10px;
+}
 /*--------------animation-------------*/
 /* ---flapping wings--- */
 .wings-up {
@@ -239,7 +174,7 @@ button {
   width: 20vw;
   position: absolute;
 }
-@keyframes Xmove-forward {
+@keyframes move-forward {
   /* Each percentage below represents a quiz question (10% is the location dragon should be at after question 1, 20% is where he should be after question 2, etc.) */
   0% {
   transform: translate(0,50px);
@@ -278,7 +213,7 @@ button {
 }
 /* ---reaction to obstacle---
 flapping wings images (.wings-down and wings-up) need to disappear when the surprised dragon appears */
-/* .dragon-surprised {
+.dragon-surprised {
   opacity: 0;
   animation: surprised-reaction 0.2s 1 forwards 4.8s;
 }
@@ -286,7 +221,7 @@ flapping wings images (.wings-down and wings-up) need to disappear when the surp
   100% {
     opacity: 1;
   }
-} */
+}
 /* ---fighting obstacle--- */
 
 /* ---obstacles--- */
@@ -313,13 +248,4 @@ flapping wings images (.wings-down and wings-up) need to disappear when the surp
     /* ------final x axis number needs to match the move-forward (100%) x-axis, or be a few pixels ahead. So the dragon stops behind the rock.----- */
   }
 }
-/* ---background--- */
-.background-forest {
-  width: 80vw;
-  height: 20vw;
-  background-image: url("../img/test-background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: auto;
-}
+
