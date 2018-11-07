@@ -10,10 +10,10 @@
   <title>Kid's math game</title>
 </head>
 <body>
-      <iframe src="audio/silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+      <!-- <iframe src="audio/silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
       <audio id="gameMelody" loop autoplay controls="">
         <source type="audio/mpeg" src="audio/game-melody.mp3">
-      </audio>
+      </audio> -->
   <div class="container">
     <div class="homePage">
       <div class="center-outer">
@@ -38,8 +38,8 @@
           <form id="formOne">
             <div class="form-group">
               <div class="form-group">
-                <label for="player">Enter name: </label>
-                <input type="text"  class="form-control" id="player" required>
+                <label for="gameName">Enter name: </label>
+                <input type="text"  class="form-control" id="gameName" required>
               </div>
             </div>
             <label for="gameType">Game Type</label>
@@ -54,7 +54,7 @@
               <option value='moderate'>Moderate</option>
               <option value='advanced'>Advanced</option>
             </select><br>
-            <button type="submit" class="btn btn-primary">Start</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
           </div>
         </div>
       </form>
@@ -66,26 +66,29 @@
     </div>
     <div class="gamePage">
       <div class="col-md-12 background">
+        <div class="start-button">
+          <button type="button" id="startGame" class="btn btn-success">Start</button>
+        </div>
         <div class="playerNameLabel">
-          <label  for="playerNameLabel"><span id='playerName'></span>Name:</label>
+          <label  for="playerNameLabel">Name: <span id='playerName'></span></label>
           <br>
           <label  for="correctAnswers"> Correct Answers: <span id='correctAnswers'></span></label><br>
           <label  for="wrongAnswers"> Wrong Answers: <span id='wrongAnswers'></span></label>
         </div>
       </div>
-      <div id="textArea">
-        <textarea rows="2" cols="50">Text Area </textarea>
+      <div id="question">
+        <label class="question" for="question"></label>
       </div>
       <div class="game-buttons">
         <div class="row">
           <div class="col-md-3">
-            <button class="btn btn-primary" type="submit" id="answerOne">Choice1</button>
+            <button class="btn btn-primary" type="button" id="answerOne">Choice1</button>
           </div>
           <div class="col-md-3">
-            <button class="btn btn-primary" type="submit" id="answerTwo">Choice2</button>
+            <button class="btn btn-primary" type="button" id="answerTwo">Choice2</button>
           </div>
           <div class="col-md-3">
-            <button class="btn btn-primary" type="submit" id="answerThree">Choice3</button>
+            <button class="btn btn-primary" type="button" id="answerThree">Choice3</button>
           </div>
         </div>
       </div>
@@ -95,7 +98,7 @@
     </div>
   </div>
   <!-- --------Leilani animation section-------- -->
-    
+
     <div class="dragon" id = "flying">
       <img class = "wings-down" src="img/dragon-wings-down.png" alt="dragon-wings-down">
       <img class = "wings-up" src="img/dragon-wings-up.png" alt="dragon-wings-up">

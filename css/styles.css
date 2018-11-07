@@ -242,6 +242,9 @@ flapping wings images (.wings-down and wings-up) need to disappear when the surp
     transform: translate(150px,-20px);
   }
 }
+.start-button {
+  float: right;
+}
 .bigger-fire {
   animation: more-fire 0.4s infinite linear alternate;
 }
@@ -300,7 +303,7 @@ flapping wings images (.wings-down and wings-up) need to disappear when the surp
   .gold span:nth-child(n+2) {
     animation-delay: 1.5s;
   }
-  
+
   .gold span:nth-child(n+3) {
     animation-delay: 1.7s;
   }
