@@ -1,99 +1,251 @@
-.game-buttons {
+.homePage {
   display: none;
 }
+.gamePage {
+  /* display: none; */
+}
+.game-buttons {
+  /* display: none;
+ */
+}
+#textArea {
+  margin-bottom: 5%;
+  margin-top: 15%;
+  margin-left: 20%;
+}
+
 body {
+  background-color: lightblue;
   background-image: url(../img/background.jpg);
-  height: 100%
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-position: right 8px bottom 45%; */
+  background-position: right 45% bottom 45%;
   margin: 4px;
   margin-right: 10px;
- }
-.jumbotron {
-  background-color: #47b4b0;
-  opacity: 0.8;
+}
+html {
+  background-image: url(../img/background.jpg);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right 45% bottom 45%;
+  margin: 4px;
+  margin-right: 10px;
+}
+
+.center-outer {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.center-inner {
+  display: table-cell;
+  vertical-align: middle;
   text-align: center;
+}
+
+.bubbles {
+  display: inline-block;
+  font-family: arial;
+  position: relative;
+}
+
+.bubbles h1 {
+  position: relative;
+  margin: 1em 0 0;
+  font-family: 'Spicy Rice', cursive;
   color: blue;
-  padding: 16px;
-  margin: 12px;
+  z-index: 1%;
+
+}
+
+.individual-bubble {
+  position: absolute;
+  border-radius: 120%;
+  bottom: 20px;
+  background-color: white;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 65px;
 }
 #thought2 {
-  height: 100%;
-  opacity: 0.7;
+  height: 110%;
+  opacity: 0.8;
+  float: right;
+  position:absolute;
+  top: 0.2%;
+  left: 10%;
+}
+.centeredText {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  font-family: 'Indie Flower', cursive;
+  color: blue;
+}
+p {
+  font-size: 150%;
+  padding: 15%;
 
 }
 .card {
   margin-bottom: 20px;
 }
 
-#gameMelody {
-  float: bottom;
+ #dragon-sleep {
+  width: 25%;
   position: absolute;
-  bottom: 1px;
-  right: 3px;
+  top: 10%;
+  right: 75%;
+  margin-top: 15%;
 }
-
-#dragon-sleep {
-  width: 30%;
-}
-/* .background {
-  background-image: url("../img/bg.jpg");
-  height: 700px;
-  position: relative; */
-}
-.background .bluePlayerLabel {
-  font-size: 2vw;
-  font-weight: bold;
-  color: blue;
-  float: left;
-  margin-top: 20px;
-  margin-left: 20px;
+#dragon-awake {
+  width: 25%;
+  position: absolute;
+  bottom: 10%;
+  right: 75%;
 }
 
 .background .playerNameLabel {
-  font-size: 2vw;
-  font-weight: bold;
+  font-size: 1.5vw;
+  font-weight: bolder;
   color: red;
-  float: right;
   margin-top: 20px;
-  margin-right: 20px;
+  margin-left: 10px;
 }
 button {
   margin-bottom: 10px;
 }
-
-#rollDiceButton {
-float: left;
-  position:absolute;
-      top: 75%;
-      left: 35%;
+/*--------------animation-------------*/
+/* ---flapping wings--- */
+.wings-up {
+  animation: fade 0.3s infinite ease-in-out alternate;
 }
-
-#holdButton {
-  float: left;
+@keyframes fade {
+	0% {
+    opacity: 1;
+    transform: translate(0,3vw);
+	}
+	25% {
+    opacity: 1;
+    transform: translate(0,3vw);
+	}
+	75% {
+    opacity: 0;
+    transform: translate(0,0);
+	}
+	100% {
+    opacity: 0;
+    transform: translate(0,0);
+	}
+}
+.wings-down {
+  animation: otherFade 0.3s infinite ease-in-out alternate;
+}
+@keyframes otherFade {
+	0% {
+    opacity: 0;
+    transform: translate(0,3vw);
+	}
+	25% {
+    opacity: 0;
+    transform: translate(0,3vw);
+	}
+	75% {
+    opacity: 1;
+    transform: translate(0,0);
+	}
+	100% {
+    opacity: 1;
+    transform: translate(0,0);
+	}
+}
+/* ---forward motion--- */
+.flying {
+  position: relative;
+  animation: move-forward 5s 1 ease-in-out forwards;
+}
+.flying img {
+  width: 20vw;
   position: absolute;
-    top: 75%;
-    left: 55%;
 }
-.equations img {
+@keyframes move-forward {
+  /* Each percentage below represents a quiz question (10% is the location dragon should be at after question 1, 20% is where he should be after question 2, etc.) */
+  0% {
+  transform: translate(0,50px);
+  }
+  10% {
+    transform: translate(7vw,0px);
+  }
+  20% {
+    transform: translate(14vw,0px);
+  }
+  30% {
+    transform: translate(21vw,0px);
+  }
+  40% {
+    transform: translate(28vw,0px);
+  }
+  50% {
+    transform: translate(35vw,0px);
+  }
+  60% {
+    transform: translate(42vw,0px);
+  }
+  70% {
+    transform: translate(49vw,0px);
+  }
+  80% {
+    transform: translate(56vw,0px);
+  }
+  90% {
+    transform: translate(63vw,0px);
+  }
+  100% {
+    transform: translate(70vw,0px);
+    /* ------final x axis number needs to match the obstacle animation (100%) x-axis, or be a few pixels ahead. So the dragon stops behind the rock.----- */
+  }
+}
+/* ---reaction to obstacle---
+flapping wings images (.wings-down and wings-up) need to disappear when the surprised dragon appears */
+.dragon-surprised {
+  opacity: 0;
+  animation: surprised-reaction 0.2s 1 forwards 4.8s;
+}
+@keyframes surprised-reaction {
+  100% {
+    opacity: 1;
+  }
+}
+/* ---fighting obstacle--- */
+
+/* ---obstacles--- */
+.falling-rock {
+  display: inline-block;
   position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto auto;
-      width: 10%;
+  opacity: 0;
+  width: 15vw;
+  height: 15vw;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../img/rock1.png");
+  animation: obstacle 0.2s 1 ease-in forwards 1.3s;
+}
+@keyframes obstacle {
+  0% {
+    opacity: 1;
+    transform: translate(70vw, 0) rotateZ(180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(70vw, 15vw) rotateZ(0deg);
+    /* ------final x axis number needs to match the move-forward (100%) x-axis, or be a few pixels ahead. So the dragon stops behind the rock.----- */
+  }
 }
 
-.turnPoint {
-  float: left;
-  font-size: 2vw;
-  font-weight: bold;
-  position: absolute;
-  top: 65%;
-  left: 44%;
-}
-.game-buttons {
-  /*display: none;*/
-}

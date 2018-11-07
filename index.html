@@ -1,18 +1,15 @@
+
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
 <head>
-  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="js/jquery-3.3.1.js"></script>
   <script src="js/scripts.js"></script>
-  <title>Math Game</title>
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Spicy+Rice" rel="stylesheet">
+  <title>Kid's math game</title>
 </head>
 <body>
-  <h1>hi</h1>
-  <p>efks</p>
-</body>
-=======
   <head>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
@@ -31,18 +28,35 @@
       </div><br>
 </p>
 <br><br>
+=======
+  <div class="container">
+    <div class="homePage">
+      <div class="center-outer">
+        <div class="center-inner">
+          <div class="bubbles">
+            <h1> Welcome to math game! </h1>
+          </div>
+        </div>
+      </div>
+      <br><br>
       <div class="row">
         <div class="col-md-6">
-          <img id="thought2" src="img/thought2.png" alt="though bubble">  
-        </div>
-        <div class="col-md-6">
-        <form id="formOne">
-          <div class="form-group">
-            <div class="form-group">
-              <label for="player">Enter name: </label>
-              <input type="text"  class="form-control" id="player" required>
+          <br>
+          <div class="container">
+            <img id="thought2" src="img/thought2.png" alt="though bubble">
+            <div class="centeredText">
+              <p>Hello, I'm Toothless. Lets play a math game. Click 'Start' to wake me up</p>
             </div>
           </div>
+        </div>
+        <div class="col-md-6">
+          <form id="formOne">
+            <div class="form-group">
+              <div class="form-group">
+                <label for="player">Enter name: </label>
+                <input type="text"  class="form-control" id="player" required>
+              </div>
+            </div>
             <label for="gameType">Game Type</label>
             <select class="form-control" id="gameType">
               <option value='addition'>Addition</option>
@@ -55,36 +69,81 @@
               <option value='moderate'>Moderate</option>
               <option value='advanced'>Advanced</option>
             </select><br>
-
             <button type="submit" class="btn btn-primary">Start</button>
-              </div>
-            </div>
-        </form>
+          </div>
+        </div>
+      </form>
+      <div class="col-md-12">
+        <div>
+          <img id="dragon-sleep" src="img/dragon-sleep.png" alt="dragon-sleep">
+        </div>
       </div>
-
-    <div class="col-md-12 background">
-      <div class="playerNameLabel">
-          <label  for="playerNameLabel"><span id='playerName'></span></label>
+    </div>
+    <div class="gamePage">
+      <div class="col-md-12 background">
+        <div class="playerNameLabel">
+          <label  for="playerNameLabel"><span id='playerName'></span>Name:</label>
           <br>
-          <label  for="correctAnswers"> Correct Answers: <span id='correctAnswers'></span></label>
+          <label  for="correctAnswers"> Correct Answers: <span id='correctAnswers'></span></label><br>
           <label  for="wrongAnswers"> Wrong Answers: <span id='wrongAnswers'></span></label>
+        </div>
+      </div>
+      <div id="textArea">
+        <textarea rows="2" cols="50">Text Area </textarea>
       </div>
       <div class="game-buttons">
-        <button class="btn btn-primary" type="submit" id="answerOne">Choice 1</button>
-        <button class="btn btn-primary" type="submit" id="answerTwo">Choice 2</button>
-        <button class="btn btn-primary" type="submit" id="answerThree">Choice 3</button>
+        <div class="row">
+          <div class="col-md-3">
+            <button class="btn btn-primary" type="submit" id="answerOne">Choice1</button>
+          </div>
+          <div class="col-md-3">
+            <button class="btn btn-primary" type="submit" id="answerTwo">Choice2</button>
+          </div>
+          <div class="col-md-3">
+            <button class="btn btn-primary" type="submit" id="answerThree">Choice3</button>
+          </div>
+        </div>
       </div>
-        <label  class="turnPoint" for="turnPoint"><span id='turnPoint'></span></label>
+      <div>
+        <img id="dragon-awake" src="img/dragon-awake-rv.png" alt="dragon-awake">
       </div>
-
     </div>
   </div>
-  <br>
-  <div>
-    <img id="dragon-sleep" src="img/dragon-sleep.png" alt="dragon-sleep">
-  </div>
-  <br>
-  <br>
+  <!-- --------Leilani animation section-------- -->
+    <div class="dragon">
+
+    </div>
+    <div class="flying">
+      <img class = "wings-down" src="img/dragon-wings-down.png" alt="dragon-wings-down">
+      <img class = "wings-up" src="img/dragon-wings-up.png" alt="dragon-wings-up">
+      <img class = "dragon-surprised" src="img/dragon-standing.png" alt="dragon-wings-up">
+    </div>
+    <div class="firebreathing">
+    </div>
+    <div class="surprised">
+    </div>
+
+    <div class="background-forest">
+      <span class="falling-rock"></span>
+    </div>
+
   </body>
->>>>>>> bkindtoall
+  <!-- <script>
+     var flightDistance = 0;
+
+    setInterval(function(){
+      $(".dragon").css("left", flightDistance);
+      // console.log($(".wings-down").position());
+      if(flightDistance != 300) {
+        flightDistance+=2;
+      } else {
+        $(".flying").removeClass("dragon");
+        return
+      }
+      console.log($(".dragon").css("left"));
+    },15);
+
+
+
+  </script> -->
 </html>
