@@ -257,7 +257,7 @@ flapping wings images (.wings-down and wings-up) need to disappear when the surp
     opacity: 0;
     transform: translate(150px,-20px);
   }
-
+}
 /* ---obstacles--- */
 .falling-rock {
   display: inline-block;
@@ -282,4 +282,45 @@ flapping wings images (.wings-down and wings-up) need to disappear when the surp
     /* ------final x axis number needs to match the move-forward (100%) x-axis, or be a few pixels ahead. So the dragon stops behind the rock.----- */
   }
 }
+/* ---falling gold coins--- */
+.falling-coins {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background-image: url("../img/coin.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: falling-coins 1s infinite ease-in forwards;
 
+}
+.gold span:nth-child(n+1) {
+    animation-delay: 1s;
+  }
+  .gold span:nth-child(n+2) {
+    animation-delay: 1.5s;
+  }
+  
+  .gold span:nth-child(n+3) {
+    animation-delay: 1.7s;
+  }
+  .gold span:nth-child(n+4) {
+    animation-delay: 1.9s;
+  }
+  .gold span:nth-child(n+5) {
+    animation-delay: 1s;
+  }
+  @-webkit-keyframes falling-coins {
+    0% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0px) rotateZ(0deg) rotateY(30deg);
+    }
+    75% {
+    opacity: 1;
+    -webkit-transform: translate(100px, 600px) rotateZ(270deg) rotateY(180deg);
+    }
+    100% {
+    opacity: 0;
+    -webkit-transform: translate(150px, 800px) rotateZ(360deg) rotateY(90deg);
+    }
+    }
