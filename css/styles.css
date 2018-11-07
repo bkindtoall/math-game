@@ -1,8 +1,8 @@
 .homePage {
-  display: none;
+  /* display: none; */
 }
 .gamePage {
-  /* display: none; */
+  display: none;
 }
 .game-buttons {
   /* display: none;
