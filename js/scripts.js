@@ -129,7 +129,9 @@ jQuery(document).ready(function($){
 $(document).ready(function(){
   $("form#formOne").submit(function(event){
     event.preventDefault();
+    $("#dragon-sleep").hide();
     $(".dragon#flying").show();
+    // $(".dragon#surprised").show();
 
   })
   

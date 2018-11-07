@@ -126,7 +126,7 @@ button {
   position: relative;
   display: none;
   /* ---forward motion pt 1 of 2--- */
-  animation: move-forward 5s 1 ease-in-out forwards;
+  /* animation: move-forward 5s 1 ease-in-out forwards; */
 }
 .dragon img {
   width: 20vw;
@@ -218,7 +218,7 @@ button {
 flapping wings images (.wings-down and wings-up) need to disappear when the surprised dragon appears */
 .dragon-surprised {
   opacity: 0;
-  animation: surprised-reaction 0.2s 1 forwards 4.8s;
+  animation: surprised-reaction 0.2s 1 forwards 1s;
 }
 @keyframes surprised-reaction {
   100% {
