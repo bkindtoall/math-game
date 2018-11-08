@@ -108,17 +108,6 @@ Datas.prototype.generateRandomQuestion= function () {
   $("label#question").text(this.questions[random]);
 
 }
-function Dragon(){
-  this.shape=""
-  this.xCordinate=0
-
-}
-Dragon.prototype.move= function () {
-  this.xCordinate +=50;
-}
-Dragon.prototype.breath= function () {
-
-}
 function generateRandom(number){
   return Math.floor(Math.random() * number);
 }
@@ -126,21 +115,39 @@ function addStartEventListeners(data,game){
   $("button#startGame").click(function(){
     $("button#startGame").hide();
     $(".game-buttons").show();
+    $(".background-forest").show();
+
+    moveDragon();
     continueGame(data,game);
   })
 }
 function continueGame (data,game){
   data.generateRandomQuestion();
+  audio["rock"].play();
   $("button.correctAnswer").click(function(){
     game.getCorrectAnswer();
+    audio["fire"].play();
+    $(".dragon#flying").hide();
+    $(".dragon#firebreathing").show();
+    setInterval(function(){
+      $(".dragon#flying").show();
+      $(".dragon#firebreathing").hide();
+      return
+    },800);
     goOn(data,game);
   })
   $("button.wrongAnswer1").click(function(){
     game.getWrongAnswer();
+    audio["wrong"].play();
+    $(".dragon#flying").show();
+    $(".dragon#firebreathing").hide();
     goOn(data,game);
   })
   $("button.wrongAnswer2").click(function(){
     game.getWrongAnswer();
+    audio["wrong"].play();
+    $(".dragon#flying").show();
+    $(".dragon#firebreathing").hide();
     goOn(data,game);
   })
 }
@@ -164,17 +171,56 @@ function refreshPoints (game) {
 
 }
 function win(data){
-  alert("hey "+data.name+". you were lucky this time, but not always! Muhahahah")
+  setInterval(function(){
+    audio["flying"].pause();
+    $("#flying").hide();
+    $(".dragon#firebreathing").hide();
+    $(".wings-down").hide();
+    $("#question").hide();
+    $(".game-buttons").hide();
+    $(".wings-up").hide();
+    $("#win").show();
+    $(".gold").show();
+    return
+  },1000);
 }
 function lose(data) {
-  alert("hey "+data.name+". you are a loser! Total loser! muahahaha")
+    audio["flying"].pause();
+    $(".dragon#flying").hide();
+    $(".dragon#firebreathing").hide();
+    $(".wings-down").hide();
+    $("#question").hide();
+    $(".game-buttons").hide();
+    $(".wings-up").hide();
+    $("#lose").show();
 }
 $(document).ready(function() {
+  audio["backSound"] = new Audio();
+  audio["backSound"].src = "audio/game-melody.mp3";
+  audio["backSound"].volume= 0.3;
+  audio["backSound"].loop= true;
+  audio["backSound"].play();
+  audio["flying"] = new Audio();
+  audio["flying"].src = "audio/wings-flapping95.wav";
+  audio["flying"].loop= true;
+  audio["rock"] = new Audio();
+  audio["rock"].src = "audio/swoosh.wav";
+  audio["fire"] = new Audio();
+  audio["fire"].src = "audio/firesmall1.wav";
+  audio["wrong"] = new Audio();
+  audio["wrong"].src = "audio/wrong-answer.wav";
+  $("#gamePage").hide();
+  $("#reset").hide();
+  $("#win").hide();
+  $("#lose").hide();
+  $(".gold").hide();
+  $(".background-forest").hide();
   bubbles();
   $("html").addClass("set-background");
   $(document.body).addClass("set-background");
   $("form#formOne").submit(function(event) {
     event.preventDefault();
+    audio["flying"].play ();
     gameType = $("#gameType").val();
     gameMode = $("#gameMode").val();
     name = $("input#gameName").val();
@@ -195,10 +241,6 @@ $(document).ready(function() {
 
 
     addStartEventListeners(data,game);
-    setTimeout(function(){
-      console.log(data.questions,data.correctAnswers,data.wrongAnswers1,data.wrongAnswers2);
-
-    }, 500);
 
   })
 })
@@ -225,4 +267,16 @@ function bubbles() {
     }
   );
 }, 350);
+}
+function moveDragon() {
+var flightDistance = 2;
+  setInterval(function(){
+  $(".dragon").css("left", flightDistance+"%");
+  if(flightDistance != 32) {
+  flightDistance+=0.5;
+  } else {
+  return
+  }
+  console.log($(".dragon").css("left"));
+},50);
 }
