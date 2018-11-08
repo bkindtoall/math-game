@@ -35,13 +35,13 @@ function Datas (gameType,gameMode,name) {
 }
 Datas.prototype.getData= function(){
   var thisObject = this;
-	$.ajax({
-		url: "addition.txt",
-		type: "GET",
-		dataType: "text",
-		success: successFn,
-		error: errorFn
-	})
+  $.ajax({
+    url: "addition.txt",
+    type: "GET",
+    dataType: "text",
+    success: successFn,
+    error: errorFn
+  })
   function successFn(result){
     console.log(result);
     var meetGame= false;
@@ -101,11 +101,11 @@ Datas.prototype.generateRandomQuestion= function () {
     firstButton.text(this.wrongAnswers1[random]);
     secondButton.text(this.wrongAnswers2[random]);
     thirdButton.text(this.correctAnswers[random]);
-        firstButton.addClass("wrongAnswer1");
-        secondButton.addClass("wrongAnswer2");
-        thirdButton.addClass("correctAnswer");
+    firstButton.addClass("wrongAnswer1");
+    secondButton.addClass("wrongAnswer2");
+    thirdButton.addClass("correctAnswer");
   }
-  $("label.question").text(this.questions[random]);
+  $("label#question").text(this.questions[random]);
 
 }
 function Dragon(){
@@ -124,6 +124,8 @@ function generateRandom(number){
 }
 function addStartEventListeners(data,game){
   $("button#startGame").click(function(){
+    $("button#startGame").hide();
+    $(".game-buttons").show();
     continueGame(data,game);
   })
 }
@@ -168,6 +170,9 @@ function lose(data) {
   alert("hey "+data.name+". you are a loser! Total loser! muahahaha")
 }
 $(document).ready(function() {
+  bubbles();
+  $("html").addClass("set-background");
+  $(document.body).addClass("set-background");
   $("form#formOne").submit(function(event) {
     event.preventDefault();
     gameType = $("#gameType").val();
@@ -180,11 +185,15 @@ $(document).ready(function() {
     $("#playerName").text(data.name);
     $(".homePage").hide();
     $(".gamePage").show();
-
     $("#dragon-sleep").hide();
     // $(".dragon#firebreathing").show();
     $(".dragon#flying").show();
     // $(".dragon#surprised").show();
+
+    $(".game-buttons").hide();
+
+
+
     addStartEventListeners(data,game);
     setTimeout(function(){
       console.log(data.questions,data.correctAnswers,data.wrongAnswers1,data.wrongAnswers2);
@@ -194,30 +203,26 @@ $(document).ready(function() {
   })
 })
 // Bubbles
-// jQuery(document).ready(function($){
-//      var bArray = [];
-//     var sArray = [4,6,8,10];
-//      for (var i = 0; i < $('.bubbles').width(); i++) {
-//         bArray.push(i);
-//     }
-//
-//     function randomValue(arr) {
-//         return arr[Math.floor(Math.random() * arr.length)];
-//     }
-//
-//     setInterval(function(){
-//                  var size = randomValue(sArray);
-//         $('.bubbles').append('<div class="individual-bubble" style="left: ' + randomValue(bArray) + 'px; width: ' + size + 'px; height:' + size + 'px;"></div>');
-//
-//         $('.individual-bubble').animate({
-//             'bottom': '100%',
-//             'opacity' : '-=0.7'
-//         }, 3000, function(){
-//             $(this).remove()
-//         }
-//         );
-//     }, 350);
-//
-// });
-// >>>>>>> 5fda4e1882904d2e21766c605766e89aa1715f9f
-// ---tentative animation triggers---
+
+function bubbles() {
+  var bArray = [];
+  var sArray = [4,6,8,10];
+  for (var i = 0; i < $('.bubbles').width(); i++) {
+    bArray.push(i);
+  }
+  function randomValue(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+  setInterval(function(){
+    var size = randomValue(sArray);
+    $('.bubbles').append('<div class="individual-bubble" style="left: ' + randomValue(bArray) + 'px; width: ' + size + 'px; height:' + size + 'px;"></div>');
+
+    $('.individual-bubble').animate({
+      'bottom': '100%',
+      'opacity' : '-=0.7'
+    }, 3000, function(){
+      $(this).remove()
+    }
+  );
+}, 350);
+}
