@@ -1,37 +1,38 @@
 .homePage {
-  /* display: none; */
+   /*display: none;*/
 }
 .gamePage {
   display: none;
 }
 .game-buttons {
-  /* display: none;
- */
+   /*display: none;*/
 }
-#textArea {
-  margin-bottom: 5%;
-  margin-top: 15%;
-  margin-left: 20%;
-}
-
-body {
+.set-background {
   background-color: lightblue;
   background-image: url(../img/background.jpg);
+  width: 100%;
   height: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+
+  /*height: 100%;
+  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right 45% bottom 45%;
   margin: 4px;
-  margin-right: 10px;
+  margin-right: 10px;*/
 }
-html {
-  background-image: url(../img/background.jpg);
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: right 45% bottom 45%;
-  margin: 4px;
-  margin-right: 10px;
+body,html {
+
+}
+.zeroMargin {
+  margin: 10px 10px 10px 10px;
+  padding: 0 0 0 0;
+  width: 100%;
 }
 
 .center-outer {
@@ -73,12 +74,11 @@ h1 {
   font-size: 65px;
 }
 #thought2 {
-  height: 110%;
-  opacity: 0.8;
-  float: right;
-  position:absolute;
-  top: 0.2%;
-  left: 10%;
+  position: fixed;
+  width: 25%;
+  top: 35%;
+  height: 30%;
+  left: 15%;
 }
 .centeredText {
   position: absolute;
@@ -93,22 +93,13 @@ p {
   padding: 15%;
 
 }
-.card {
-  margin-bottom: 20px;
-}
 
  #dragon-sleep {
+  position: fixed;
   width: 25%;
-  position: absolute;
-  top: 10%;
-  right: 75%;
-  margin-top: 15%;
-}
-#dragon-awake {
-  width: 25%;
-  position: absolute;
-  bottom: 10%;
-  right: 75%;
+  top: 60%;
+  height: 23%;
+  left: 2%;
 }
 
 .background .playerNameLabel {
@@ -118,15 +109,70 @@ p {
   margin-top: 20px;
   margin-left: 10px;
 }
+.background {
+  height: 50vw;
+  position: relative;
+}
+.background #startGame {
+  z-index: 1;
+  position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto auto;
+      width: 10%;
+      height:10%;
+}
+.background #reset {
+  z-index: 1;
+  position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto auto;
+      width: 10%;
+      height:10%;
+}
+.gamePage {
+  position: relative;
+}
+.background #question {
+  font-size: 4vw;
+  position: absolute;
+      right: 0;
+      left: 10%;
+      top: 0;
+      bottom: 20vw;
+      margin: auto auto;
+      width: 30%;
+      height:10%;
+}
+.background .game-buttons {
+    z-index: 1;
+    position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto auto;
+      width: 20%;
+      height:20%;
+}
 button {
   margin-bottom: 10px;
 }
 /*---------------------animation-------------------*/
 .dragon {
-  position: relative;
+  z-index: 1;
+  position: fixed;
+  width: 25%;
+  top: 60%;
+  height: 23%;
+  left: 2%;
   display: none;
-  /* ---forward motion pt 1 of 2--- */
-  /* animation: move-forward 5s 1 ease-in-out forwards; */
+
 }
 .dragon img {
   width: 20vw;
@@ -177,43 +223,7 @@ button {
 	}
 }
 /* ---forward motion pt 2 of 2--- */
-@keyframes move-forward {
-  /* Each percentage below represents a quiz question (10% is the location dragon should be at after question 1, 20% is where he should be after question 2, etc.) */
-  0% {
-  transform: translate(0,50px);
-  }
-  10% {
-    transform: translate(7vw,0px);
-  }
-  20% {
-    transform: translate(14vw,0px);
-  }
-  30% {
-    transform: translate(21vw,0px);
-  }
-  40% {
-    transform: translate(28vw,0px);
-  }
-  50% {
-    transform: translate(35vw,0px);
-  }
-  60% {
-    transform: translate(42vw,0px);
-  }
-  70% {
-    transform: translate(49vw,0px);
-  }
-  80% {
-    transform: translate(56vw,0px);
-  }
-  90% {
-    transform: translate(63vw,0px);
-  }
-  100% {
-    transform: translate(70vw,0px);
-    /* ------final x axis number needs to match the obstacle animation (100%) x-axis, or be a few pixels ahead. So the dragon stops behind the rock.----- */
-  }
-}
+
 /* ---reaction to obstacle---
 flapping wings images (.wings-down and wings-up) need to disappear when the surprised dragon appears */
 .dragon-surprised {
@@ -232,15 +242,20 @@ flapping wings images (.wings-down and wings-up) need to disappear when the surp
 @keyframes breathe-fire {
   0% {
     opacity: 0;
-    transform: translate(150px,-20px);
+    transform: translate(14vw,-3vw);
   }
   50% {
     opacity:1;
   }
-  100% {
+  99% {
     opacity: 1;
-    transform: translate(150px,-20px);
+    transform: translate(14vw,-3vw);
   }
+  100% {
+    opacity: 0}
+}
+.start-button {
+  float: right;
 }
 .bigger-fire {
   animation: more-fire 0.4s infinite linear alternate;
@@ -248,45 +263,55 @@ flapping wings images (.wings-down and wings-up) need to disappear when the surp
 @keyframes more-fire {
   0% {
     opacity: 1;
-    transform: translate(150px,-20px);
+    transform: translate(14vw,-3vw);
   }
   50% {
     opacity:1;
   }
   100% {
     opacity: 0;
-    transform: translate(150px,-20px);
+    transform: translate(14vw,-3vw);
   }
 }
 /* ---obstacles--- */
 .falling-rock {
+  display: none;
   display: inline-block;
-  position: absolute;
+  position: fixed;
   opacity: 0;
-  width: 15vw;
-  height: 15vw;
+  width: 20%;
+  height: 20%;
+  left: 47%;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   background-image: url("../img/rock1.png");
   animation: obstacle 0.2s 1 ease-in forwards 1.3s;
 }
+
 @keyframes obstacle {
   0% {
     opacity: 1;
-    transform: translate(70vw, 0) rotateZ(180deg);
+    top: 20%;
+    transform: rotateZ(180deg);
   }
   100% {
     opacity: 1;
-    transform: translate(70vw, 15vw) rotateZ(0deg);
+    top: 67%;
+    transform: rotateZ(0deg);
     /* ------final x axis number needs to match the move-forward (100%) x-axis, or be a few pixels ahead. So the dragon stops behind the rock.----- */
   }
 }
 /* ---falling gold coins--- */
+.gold {
+  z-index: 2;
+  top: 30%;
+}
 .falling-coins {
+
   display: inline-block;
-  width: 80px;
-  height: 80px;
+  width: 20%;
+  height: 20%;
   background-image: url("../img/coin.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -294,13 +319,13 @@ flapping wings images (.wings-down and wings-up) need to disappear when the surp
   animation: falling-coins 1s infinite ease-in forwards;
 
 }
-.gold span:nth-child(n+1) {
+  .gold span:nth-child(n+1) {
     animation-delay: 1s;
   }
   .gold span:nth-child(n+2) {
     animation-delay: 1.5s;
   }
-  
+
   .gold span:nth-child(n+3) {
     animation-delay: 1.7s;
   }
@@ -317,10 +342,10 @@ flapping wings images (.wings-down and wings-up) need to disappear when the surp
     }
     75% {
     opacity: 1;
-    -webkit-transform: translate(100px, 600px) rotateZ(270deg) rotateY(180deg);
+    -webkit-transform: translate(50px, 100px) rotateZ(270deg) rotateY(180deg);
     }
     100% {
     opacity: 0;
-    -webkit-transform: translate(150px, 800px) rotateZ(360deg) rotateY(90deg);
+    -webkit-transform: translate(100px, 400px) rotateZ(360deg) rotateY(90deg);
     }
     }
