@@ -27,7 +27,7 @@ Player play:
 
 3. Open index.html on browser.
 
-Direct link: https://bkindtoall.github.io/math-game/ however the ajax server connection needs to be initialized as noted in the Install instructions. Otherwise the math problems will on show "choice1, choice2, Choice3"
+Direct link: https://bkindtoall.github.io/math-game/ however the ajax server connection needs to be initialized as noted in the Install instructions. Otherwise the math problems will only show "choice1, choice2, Choice3"
 
 
 ## Support and contact details
