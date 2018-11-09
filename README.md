@@ -22,7 +22,7 @@ Player play:
 Install Instructions:
 
 1. Clone from github.com on terminal using "git clone https://github.com/bkindtoall/math-game.git"
-2. Initialize Ajax: On Terminal Command line, must run python -m SimpleHTTPServer to initiallize ajax
+2. Initialize Ajax: On Terminal Command line, must run: python -m SimpleHTTPServer to initiallize ajax
 					On browser command line: localhost:8000/index.html to open the page
 
 3. Open index.html on browser.

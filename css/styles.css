@@ -84,6 +84,7 @@ p {
 }
 .background .playerNameLabel {
   font-size: 1.5vw;
+  font-family: 'Times New Roman', Times, serif;
   font-weight: bolder;
   color: red;
   margin-top: 20px;
