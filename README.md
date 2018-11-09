@@ -31,11 +31,11 @@ Direct link: https://bkindtoall.github.io/math-game/ however the ajax server con
 
 
 ## Support and contact details
-_Contact Kaveh Saleminejad - lcaveh@gmail.com._
-_Contact Edin Filipovic - edin.filipovic89@gmail.com._
-_Contact Patricia Filipovic - bkindtoall@gmail.com._
-_Contact Gulzat Karimova - gulzat.karimova@gmail.com_
-_Contact Leilani Leach - leilanileach@yahoo.com._
+* _Contact Kaveh Saleminejad - lcaveh@gmail.com._
+* _Contact Edin Filipovic - edin.filipovic89@gmail.com._
+* _Contact Patricia Filipovic - bkindtoall@gmail.com._
+* _Contact Gulzat Karimova - gulzat.karimova@gmail.com_
+* _Contact Leilani Leach - leilanileach@yahoo.com._
 
 ## Technologies Used
 
