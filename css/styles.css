@@ -1,11 +1,5 @@
-.homePage {
-   /*display: none;*/
-}
 .gamePage {
   display: none;
-}
-.game-buttons {
-   /*display: none;*/
 }
 .set-background {
   background-color: lightblue;
@@ -17,17 +11,6 @@
   padding: 0;
   background-size:100% 100%;
   background-repeat: no-repeat;
-
-  /*height: 100%;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: right 45% bottom 45%;
-  margin: 4px;
-  margin-right: 10px;*/
-}
-body,html {
-
 }
 .zeroMargin {
   margin: 10px 10px 10px 10px;
@@ -56,7 +39,7 @@ body,html {
 .bubbles h1 {
   position: relative;
   margin: 1em 0 0;
-  font-family: 'Spicy Rice', cursive;
+  font-family: 'Spicy Rice', 'cursive';
   color: blue;
   z-index: 1%;
 
@@ -85,15 +68,13 @@ h1 {
   top: 50%;
   left: 45%;
   transform: translate(-50%, -50%);
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Indie Flower', 'cursive';
   color: blue;
 }
 p {
   font-size: 150%;
   padding: 15%;
-
 }
-
  #dragon-sleep {
   position: fixed;
   width: 25%;
@@ -101,7 +82,6 @@ p {
   height: 23%;
   left: 2%;
 }
-
 .background .playerNameLabel {
   font-size: 1.5vw;
   font-weight: bolder;
@@ -116,24 +96,24 @@ p {
 .background #startGame {
   z-index: 1;
   position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto auto;
-      width: 10%;
-      height:10%;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto auto;
+  width: 10%;
+  height:10%;
 }
 .background #reset {
   z-index: 1;
   position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto auto;
-      width: 10%;
-      height:10%;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto auto;
+  width: 10%;
+  height:10%;
 }
 .gamePage {
   position: relative;
@@ -141,24 +121,24 @@ p {
 .background #question {
   font-size: 4vw;
   position: absolute;
-      right: 0;
-      left: 10%;
-      top: 0;
-      bottom: 20vw;
-      margin: auto auto;
-      width: 30%;
-      height:10%;
+  right: 0;
+  left: 10%;
+  top: 0;
+  bottom: 20vw;
+  margin: auto auto;
+  width: 30%;
+  height:10%;
 }
 .background .game-buttons {
-    z-index: 1;
-    position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto auto;
-      width: 20%;
-      height:20%;
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto auto;
+  width: 20%;
+  height:20%;
 }
 button {
   margin-bottom: 10px;
@@ -172,7 +152,6 @@ button {
   height: 23%;
   left: 2%;
   display: none;
-
 }
 .dragon img {
   width: 20vw;
@@ -274,32 +253,38 @@ flapping wings images (.wings-down and wings-up) need to disappear when the surp
   }
 }
 /* ---obstacles--- */
-.falling-rock {
-  display: none;
+.rock {
   display: inline-block;
   position: fixed;
-  opacity: 0;
+  top: -20%;
   width: 20%;
   height: 20%;
   left: 47%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: url("../img/rock1.png");
   animation: obstacle 0.2s 1 ease-in forwards 1.3s;
 }
-
+.rock img {
+  width: 20vw;
+  position: absolute;
+}
+.explode {
+  top:67%;
+  animation: explode 0.6s 1 ease-in forwards;
+}
 @keyframes obstacle {
   0% {
-    opacity: 1;
-    top: 20%;
+    top: -20%;
     transform: rotateZ(180deg);
   }
   100% {
-    opacity: 1;
     top: 67%;
     transform: rotateZ(0deg);
     /* ------final x axis number needs to match the move-forward (100%) x-axis, or be a few pixels ahead. So the dragon stops behind the rock.----- */
+  }
+}
+@keyframes explode {
+  100% {
+    opacity: 0;
+    transform: scale(3) rotate(10deg);
   }
 }
 /* ---falling gold coins--- */
@@ -308,7 +293,6 @@ flapping wings images (.wings-down and wings-up) need to disappear when the surp
   top: 30%;
 }
 .falling-coins {
-
   display: inline-block;
   width: 20%;
   height: 20%;
@@ -317,35 +301,33 @@ flapping wings images (.wings-down and wings-up) need to disappear when the surp
   background-repeat: no-repeat;
   background-position: center;
   animation: falling-coins 1s infinite ease-in forwards;
-
 }
-  .gold span:nth-child(n+1) {
-    animation-delay: 1s;
+.gold span:nth-child(n+1) {
+  animation-delay: 1s;
+}
+.gold span:nth-child(n+2) {
+  animation-delay: 1.5s;
+}
+.gold span:nth-child(n+3) {
+  animation-delay: 1.7s;
+}
+.gold span:nth-child(n+4) {
+  animation-delay: 1.9s;
+}
+.gold span:nth-child(n+5) {
+  animation-delay: 1s;
+}
+@-webkit-keyframes falling-coins {
+  0% {
+  opacity: 1;
+  -webkit-transform: translate(0, 0px) rotateZ(0deg) rotateY(30deg);
   }
-  .gold span:nth-child(n+2) {
-    animation-delay: 1.5s;
+  75% {
+  opacity: 1;
+  -webkit-transform: translate(50px, 100px) rotateZ(270deg) rotateY(180deg);
   }
-
-  .gold span:nth-child(n+3) {
-    animation-delay: 1.7s;
+  100% {
+  opacity: 0;
+  -webkit-transform: translate(100px, 400px) rotateZ(360deg) rotateY(90deg);
   }
-  .gold span:nth-child(n+4) {
-    animation-delay: 1.9s;
-  }
-  .gold span:nth-child(n+5) {
-    animation-delay: 1s;
-  }
-  @-webkit-keyframes falling-coins {
-    0% {
-    opacity: 1;
-    -webkit-transform: translate(0, 0px) rotateZ(0deg) rotateY(30deg);
-    }
-    75% {
-    opacity: 1;
-    -webkit-transform: translate(50px, 100px) rotateZ(270deg) rotateY(180deg);
-    }
-    100% {
-    opacity: 0;
-    -webkit-transform: translate(100px, 400px) rotateZ(360deg) rotateY(90deg);
-    }
-    }
+}

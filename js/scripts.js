@@ -1,18 +1,14 @@
 // Business Logic
-
+// Game constructor to create game object to keep scores and check the end game condition.
 function Game () {
-
-  this.answers = 0;
   this.wrongAnswers = 0;
   this.correctAnswers= 0;
   this.progress = "continue";
 }
 Game.prototype.getCorrectAnswer = function (){
-  this.answers++;
   this.correctAnswers++;
 }
 Game.prototype.getWrongAnswer = function (){
-  this.answers++;
   this.wrongAnswers++;
 }
 Game.prototype.checkEndOfGame = function (){
@@ -23,6 +19,7 @@ Game.prototype.checkEndOfGame = function (){
     this.progress = "lose";
   }
 }
+//Data constructor that use Ajax to get questions and answers from addition.txt file,store them in 4 arrays and generate random position for answers
 function Datas (gameType,gameMode,name) {
   this.name = name,
   this.questions = [],
@@ -31,7 +28,6 @@ function Datas (gameType,gameMode,name) {
   this.wrongAnswers2 = [],
   this.gameType = gameType,
   this.gameMode = gameMode
-
 }
 Datas.prototype.getData= function(){
   var thisObject = this;
@@ -41,7 +37,7 @@ Datas.prototype.getData= function(){
     dataType: "text",
     success: successFn,
     error: errorFn
-  })
+  });
   function successFn(result){
     console.log(result);
     var meetGame= false;
@@ -53,8 +49,8 @@ Datas.prototype.getData= function(){
           meetGame= true;
         } else {
           meetGame= false;
-        }
-      }
+        };
+      };
       if (lineByLine[i].match(/^[0-9]/)) {
         if (meetGame) {
           var words= lineByLine[i].split(" ");
@@ -74,9 +70,9 @@ Datas.prototype.getData= function(){
 Datas.prototype.generateRandomQuestion= function () {
   var random=generateRandom(this.questions.length);
   var randomAnswer=generateRandom(3);
-  var firstButton=$("button#answerOne")
-  var secondButton=$("button#answerTwo")
-  var thirdButton=$("button#answerThree")
+  var firstButton=$("button#answerOne");
+  var secondButton=$("button#answerTwo");
+  var thirdButton=$("button#answerThree");
   firstButton.removeClass();
   secondButton.removeClass();
   thirdButton.removeClass();
@@ -106,21 +102,22 @@ Datas.prototype.generateRandomQuestion= function () {
     thirdButton.addClass("correctAnswer");
   }
   $("label#question").text(this.questions[random]);
-
 }
+//just create random values
 function generateRandom(number){
   return Math.floor(Math.random() * number);
 }
+//add event listener to start button
 function addStartEventListeners(data,game){
   $("button#startGame").click(function(){
     $("button#startGame").hide();
     $(".game-buttons").show();
-    $(".background-forest").show();
-
+    $(".rock").show();
     moveDragon();
     continueGame(data,game);
   })
 }
+//add event listener to random answers and use goOn object to continue playing game
 function continueGame (data,game){
   data.generateRandomQuestion();
   audio["rock"].play();
@@ -129,28 +126,28 @@ function continueGame (data,game){
     audio["fire"].play();
     $(".dragon#flying").hide();
     $(".dragon#firebreathing").show();
-    setInterval(function(){
+    setTimeout(function(){
       $(".dragon#flying").show();
       $(".dragon#firebreathing").hide();
-      return
     },800);
     goOn(data,game);
-  })
+  });
   $("button.wrongAnswer1").click(function(){
     game.getWrongAnswer();
     audio["wrong"].play();
     $(".dragon#flying").show();
     $(".dragon#firebreathing").hide();
     goOn(data,game);
-  })
+  });
   $("button.wrongAnswer2").click(function(){
     game.getWrongAnswer();
     audio["wrong"].play();
     $(".dragon#flying").show();
     $(".dragon#firebreathing").hide();
     goOn(data,game);
-  })
+  });
 }
+// a function to refresh points showed in game screen and check the condition for end game or continue playing
 function goOn(data,game){
   refreshPoints(game);
   game.checkEndOfGame();
@@ -163,16 +160,19 @@ function goOn(data,game){
     win(data);
   } else {
     continueGame(data,game);
-  }
+  };
 }
 function refreshPoints (game) {
   $("#correctAnswers").text(game.correctAnswers);
   $("#wrongAnswers").text(game.wrongAnswers);
-
 }
+//to create win scenario
 function win(data){
-  setInterval(function(){
+  $(".rock").addClass("explode");
+  setTimeout(function(){
     audio["flying"].pause();
+    audio["backSound"].pause();
+    audio["win"].play();
     $("#flying").hide();
     $(".dragon#firebreathing").hide();
     $(".wings-down").hide();
@@ -181,11 +181,13 @@ function win(data){
     $(".wings-up").hide();
     $("#win").show();
     $(".gold").show();
-    return
   },1000);
 }
+//to create lose scenario
 function lose(data) {
     audio["flying"].pause();
+    audio["backSound"].pause();
+    audio["lose"].play();
     $(".dragon#flying").hide();
     $(".dragon#firebreathing").hide();
     $(".wings-down").hide();
@@ -194,58 +196,7 @@ function lose(data) {
     $(".wings-up").hide();
     $("#lose").show();
 }
-$(document).ready(function() {
-  audio["backSound"] = new Audio();
-  audio["backSound"].src = "audio/game-melody.mp3";
-  audio["backSound"].volume= 0.3;
-  audio["backSound"].loop= true;
-  audio["backSound"].play();
-  audio["flying"] = new Audio();
-  audio["flying"].src = "audio/wings-flapping95.wav";
-  audio["flying"].loop= true;
-  audio["rock"] = new Audio();
-  audio["rock"].src = "audio/swoosh.wav";
-  audio["fire"] = new Audio();
-  audio["fire"].src = "audio/firesmall1.wav";
-  audio["wrong"] = new Audio();
-  audio["wrong"].src = "audio/wrong-answer.wav";
-  $("#gamePage").hide();
-  $("#reset").hide();
-  $("#win").hide();
-  $("#lose").hide();
-  $(".gold").hide();
-  $(".background-forest").hide();
-  bubbles();
-  $("html").addClass("set-background");
-  $(document.body).addClass("set-background");
-  $("form#formOne").submit(function(event) {
-    event.preventDefault();
-    audio["flying"].play ();
-    gameType = $("#gameType").val();
-    gameMode = $("#gameMode").val();
-    name = $("input#gameName").val();
-
-    var data= new Datas (gameType,gameMode,name);
-    var game= new Game ();
-    data.getData();
-    $("#playerName").text(data.name);
-    $(".homePage").hide();
-    $(".gamePage").show();
-    $("#dragon-sleep").hide();
-    // $(".dragon#firebreathing").show();
-    $(".dragon#flying").show();
-    // $(".dragon#surprised").show();
-
-    $(".game-buttons").hide();
-
-
-
-    addStartEventListeners(data,game);
-
-  })
-})
 // Bubbles
-
 function bubbles() {
   var bArray = [];
   var sArray = [4,6,8,10];
@@ -275,8 +226,58 @@ var flightDistance = 2;
   if(flightDistance != 32) {
   flightDistance+=0.5;
   } else {
-  return
+  return;
   }
   console.log($(".dragon").css("left"));
 },50);
 }
+//main code
+$(document).ready(function() {
+  //music creators and play the back sound
+  audio["backSound"] = new Audio();
+  audio["backSound"].src = "audio/game-melody.mp3";
+  audio["backSound"].volume= 0.3;
+  audio["backSound"].loop= true;
+  audio["backSound"].play();
+  audio["flying"] = new Audio();
+  audio["flying"].src = "audio/wings-flapping95.wav";
+  audio["flying"].loop= true;
+  audio["rock"] = new Audio();
+  audio["rock"].src = "audio/swoosh.wav";
+  audio["win"] = new Audio();
+  audio["win"].src = "audio/win.mp4";
+  audio["lose"] = new Audio();
+  audio["lose"].src = "audio/lose.mp4";
+  audio["fire"] = new Audio();
+  audio["fire"].src = "audio/firesmall1.wav";
+  audio["wrong"] = new Audio();
+  audio["wrong"].src = "audio/wrong-answer.wav";
+  //hide later features
+  $("#gamePage").hide();
+  $("#reset").hide();
+  $("#win").hide();
+  $("#lose").hide();
+  $(".gold").hide();
+  $(".rock").hide();
+  bubbles();
+  $("html").addClass("set-background");
+  $(document.body).addClass("set-background");
+  //event listener for submit button
+  $("form#formOne").submit(function(event) {
+    event.preventDefault();
+    audio["flying"].play ();
+    gameType = $("#gameType").val();
+    gameMode = $("#gameMode").val();
+    name = $("input#gameName").val();
+    var data= new Datas (gameType,gameMode,name);
+    var game= new Game ();
+    data.getData();
+    $("#playerName").text(data.name);
+    $(".homePage").hide();
+    $(".gamePage").show();
+    $("#dragon-sleep").hide();
+    $(".dragon#flying").show();
+    $(".game-buttons").hide();
+    addStartEventListeners(data,game);
+  });
+});
